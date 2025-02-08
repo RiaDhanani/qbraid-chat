@@ -10,7 +10,7 @@ export function getApiKey(): string | null {
         const match = configFile.match(/api-key\s*=\s*(\S+)/);
 
         if (match) {
-            return match[1].trim()
+            return match[1].trim();
         } else {
             console.error('API key not founf in config file');
             return null;
