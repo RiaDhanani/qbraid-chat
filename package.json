@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "qbraid-chat.testAuth",
-        "title": "QBraid Chat"
+        "command": "qbraid-chat.start",
+        "title": "Start qBraid Chat"
       }
     ]
   },
