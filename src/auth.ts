@@ -12,7 +12,7 @@ export function getApiKey(): string | null {
         if (match) {
             return match[1].trim();
         } else {
-            console.error('API key not founf in config file');
+            console.error('API key not found in config file');
             return null;
         }
     } catch (error) {

@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    margin: 0;
+    justify-content: flex-end;
+}
+
+.message, .response {
+    max-width: 80%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.message {
+    align-self: flex-end;
+    text-align: right;
+    color: #000000;
+    background-color: #f0f0f0;
+}
+
+.response {
+    align-self: flex-start;
+    text-align: left;
+    color: #333333;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.input-field {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.send-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.send-button:hover {
+    background-color: #333333;
+}
+
+.model-select-container {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    z-index: 1;
+}
+
+.model-select {
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+.input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

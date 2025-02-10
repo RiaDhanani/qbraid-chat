@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{cssUri}}" />
+    </head>
+    <body>
+        <div class="model-select-container">
+            <select class="model-select" id="modelSelect">{{modelOptions}}</select>
+        </div>
+
+        <div class="chat-container" id="chat-container">
+            <!-- Chat messages will be dynamically inserted here -->
+        </div>
+
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input type="text" id="messageInput" class="input-field" placeholder="Type a message" />
+                <button class="send-button" id="sendButton">&#8593;</button>
+            </div>
+        </div>
+
+        <script>
+            const vscode = acquireVsCodeApi();
+
+            const sendMessage = async () => {
+                const message = document.getElementById('messageInput').value;
+                const model = document.getElementById('modelSelect').value;
+                if (message && model) {
+                    const messageContainer = document.getElementById('chat-container');
+                    const userMessage = document.createElement('div');
+                    userMessage.classList.add('message');
+                    userMessage.textContent = message;
+                    messageContainer.appendChild(userMessage);
+
+                    document.getElementById('messageInput').value = '';
+
+                    vscode.postMessage({
+                        type: 'sendMessage',
+                        prompt: message,
+                        model: model
+                    });
+                }
+            };
+
+            window.addEventListener('message', event => {
+                const messageContainer = document.getElementById('chat-container');
+                if (event.data.type === 'response') {
+                    const responseMessage = document.createElement('div');
+                    responseMessage.classList.add('response');
+                    responseMessage.textContent = event.data.response;
+                    messageContainer.appendChild(responseMessage);
+
+                    messageContainer.scrollTop = messageContainer.scrollHeight;
+                }
+            });
+
+            document.getElementById('sendButton').addEventListener('click', sendMessage);
+
+            document.getElementById('messageInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        </script>
+    </body>
+</html>
