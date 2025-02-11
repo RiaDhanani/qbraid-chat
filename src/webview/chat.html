@@ -36,6 +36,8 @@
 
                     document.getElementById('messageInput').value = '';
 
+                    messageContainer.scrollTop = messageContainer.scrollHeight;
+
                     vscode.postMessage({
                         type: 'sendMessage',
                         prompt: message,
@@ -55,7 +57,6 @@
                     messageContainer.scrollTop = messageContainer.scrollHeight;
                 }
             });
-
             document.getElementById('sendButton').addEventListener('click', sendMessage);
 
             document.getElementById('messageInput').addEventListener('keypress', (e) => {
