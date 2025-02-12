@@ -33,7 +33,6 @@ suite('Api Test Suite', () => {
         .catch((error) => {
             console.error('Test failed with error:', error);
             assert.fail('API call failed with error: ' + error);
-            done();
         });
     });
 });

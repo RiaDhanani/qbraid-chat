@@ -9,15 +9,13 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .chat-container {
     flex: 1;
-    padding: 20px;
-    padding-bottom: 70px;
+    padding: 20px 20px 70px;
     overflow-y: scroll;
-    background-color: #ffffff;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
@@ -46,13 +44,12 @@ body {
     font-size: 14px;
     line-height: 1.5;
     word-wrap: break-word;
-    color: #000000;
+    color: #000;
 }
 
 .message {
     align-self: flex-end;
     background-color: #f0f0f0;
-    margin-left: auto;
 }
 
 .response {
@@ -61,24 +58,21 @@ body {
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffffff;
-    border-top: 1px solid #ddd;
-    width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    margin: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
     box-sizing: border-box;
 }
 
 .input-field {
     width: calc(100% - 40px);
     padding: 10px;
-    border-radius: 5px;
     border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
 }
@@ -91,7 +85,7 @@ body {
     width: 30px;
     height: 30px;
     border: none;
-    background-color: #000000;
+    background-color: #000;
     color: white;
     border-radius: 50%;
     cursor: pointer;
@@ -102,7 +96,7 @@ body {
 }
 
 .send-button:hover {
-    background-color: #333333;
+    background-color: #333;
 }
 
 .model-select-container {
@@ -110,21 +104,12 @@ body {
     top: 10px;
     left: 20px;
     z-index: 1;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 .model-select {
     padding: 5px;
-    margin: 0;
-    border-radius: 5px;
     border: 1px solid #ddd;
-    background-color: #ffffff;
-    color: #000000;
+    border-radius: 5px;
     font-size: 14px;
-}
-
-.input-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
