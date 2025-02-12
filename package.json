@@ -3,6 +3,10 @@
   "displayName": "qbraid-chat",
   "description": "VS Code chat extension for qbraid APIs",
   "version": "0.1.0",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/RiaDhanani/qbraid-chat.git"
+  },
   "engines": {
     "vscode": "^1.96.4"
   },
