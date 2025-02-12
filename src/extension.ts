@@ -1,9 +1,10 @@
 import * as vscode from 'vscode';
 import { getApiKey } from './auth';
 import { getChatPanel } from './webview/panel';
-import { sendMessage } from './api';
+import { sendMessage, initializeStorage } from './api';
 
 export function activate(context: vscode.ExtensionContext) {
+    initializeStorage(context);
     const disposable = vscode.commands.registerCommand('qbraid-chat.start', () => {
         const apiKey = getApiKey();
         if (apiKey) {
