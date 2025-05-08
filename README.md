@@ -2,6 +2,9 @@
 
 A VS Code extension that integrates qBraid's chat API directly within your development environment.
 
+![Chat Interface](assets/image.png)
+![Model selection](assets/image-1.png)
+
 ## Features
 
 - Direct access to qBraid's chat models within VS Code
